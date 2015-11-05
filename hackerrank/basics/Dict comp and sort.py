@@ -11,6 +11,7 @@ print(d1)    # [('c', 3), ('d', 2), ('e', 1), ('p', 5), ('q', 4)]
 
 
 #Sort based on values
+#http://stackoverflow.com/a/2258273/2715083
 d2 = sorted(my_dict.items(), key = lambda x: x[1])
 print(d2)    # [('e', 1), ('d', 2), ('c', 3), ('q', 4), ('p', 5)]
 
