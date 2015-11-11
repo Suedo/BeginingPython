@@ -1,29 +1,14 @@
-lines = ['12','insert 0 5','insert 1 10','insert 0 6','print ','remove 6','append 9','append 1','sort ','print','pop','reverse','print']
+import re
+s = 'qA2'
 
-def processinput(line):
-    command , *args = line.strip().split()
-    newargs = ','.join(str(i) for i in args)
-    return str('{}({})'.format(command,newargs))
+alnum = re.compile('{}'.format('\\w'))
+alpha = re.compile('{}'.format('[a-zA-Z]'))
+digit = re.compile('{}'.format('\\d'))
+lower = re.compile('{}'.format('[a-z]'))
+upper = re.compile('{}'.format('[A-Z]'))
 
-for inputline in lines:
-    print(processinput(inputline))
-
-
-
-'''
-op:
-
-12()
-insert(0,5)
-insert(1,10)
-insert(0,6)
-print()
-remove(6)
-append(9)
-append(1)
-sort()
-print()
-pop()
-reverse()
-print()
-'''
+print(bool(re.search(alnum,s)))
+print(bool(re.search(alpha,s)))
+print(bool(re.search(digit,s)))
+print(bool(re.search(lower,s)))
+print(bool(re.search(upper,s)))
